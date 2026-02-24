@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (name && email && phone) {
         const btn = form.querySelector('.enrollment__submit');
         btn.textContent = 'ENVIADO COM SUCESSO!';
-        btn.style.background = '#104028';
+        btn.style.background = '#0A1F44';
         btn.classList.remove('pulse');
         setTimeout(() => {
           btn.textContent = 'QUERO CONCORRER A UMA BOLSA DE ESTUDOS';
