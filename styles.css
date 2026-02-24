@@ -175,6 +175,29 @@ h1, h2, h3 {
   align-items: center;
 }
 
+/* Logo Anhanguera - shared styles */
+.logo-anhanguera {
+  display: block;
+  object-fit: contain;
+}
+
+.logo-anhanguera--hero {
+  height: 48px;
+  width: auto;
+}
+
+.hero__institutional {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: calc(var(--spacing) * 3);
+  flex-wrap: wrap;
+}
+
+.hero__institutional .hero__badge {
+  margin-bottom: 0;
+}
+
 .hero__badge {
   display: inline-block;
   background: rgba(16,64,40,0.08);
@@ -190,7 +213,7 @@ h1, h2, h3 {
 }
 
 .hero__headline {
-  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-size: clamp(1.8rem, 3.5vw, 3.15rem);
   color: var(--secondary);
   margin-bottom: calc(var(--spacing) * 3);
 }
@@ -218,21 +241,12 @@ h1, h2, h3 {
   align-items: center;
 }
 
-.hero__image-placeholder {
+.hero__photo {
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 3/4;
-  background: linear-gradient(135deg, rgba(16,64,40,0.05) 0%, rgba(16,64,40,0.12) 100%);
+  max-width: 420px;
   border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.hero__image-placeholder svg {
-  width: 60%;
-  opacity: 0.6;
+  object-fit: cover;
+  filter: drop-shadow(0 12px 40px rgba(16,64,40,0.2));
 }
 
 /* ===== MARKET TRUTH SECTION ===== */
@@ -342,6 +356,73 @@ h1, h2, h3 {
   font-style: italic;
 }
 
+/* ===== WHY ANESTHESIOLOGY SECTION ===== */
+.why-anesthesiology {
+  background: var(--secondary);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--spacing) * 4);
+  margin-top: calc(var(--spacing) * 6);
+}
+
+.why-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: calc(var(--spacing) * 5);
+  border-radius: var(--radius);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.1);
+}
+
+.why-card__icon {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.why-card__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: calc(var(--spacing) * 1.5);
+}
+
+.why-card__text {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.why-card__text strong {
+  color: var(--accent);
+}
+
+.why-bottom-line {
+  margin-top: calc(var(--spacing) * 6);
+  background: rgba(255,143,0,0.12);
+  border: 1px solid rgba(255,143,0,0.3);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  text-align: center;
+}
+
+.why-bottom-line p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.why-bottom-line strong {
+  color: var(--accent);
+}
+
 /* ===== SOLUTION OFFER SECTION ===== */
 .solution {
   background: var(--primary);
@@ -353,6 +434,30 @@ h1, h2, h3 {
   margin: 0 auto;
 }
 
+.solution__credential {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(16,64,40,0.05);
+  padding: 20px 28px;
+  border-radius: var(--radius);
+  margin-top: calc(var(--spacing) * 4);
+}
+
+.logo-anhanguera--solution {
+  height: 44px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.solution__credential-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
 .solution__divider {
   width: 80px;
   height: 4px;
@@ -361,82 +466,650 @@ h1, h2, h3 {
   border-radius: 2px;
 }
 
-/* ===== MODULE BREAKDOWN SECTION ===== */
+/* ===== PROFESSOR / AUTHORITY SECTION ===== */
+.professor {
+  background: var(--primary);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.professor__grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: calc(var(--spacing) * 8);
+  align-items: start;
+}
+
+.professor__photo-wrapper {
+  position: sticky;
+  top: 40px;
+}
+
+.professor__photo {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.professor__label {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.professor__bio {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: calc(var(--spacing) * 4);
+}
+
+.professor__credentials {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
+  margin-bottom: calc(var(--spacing) * 5);
+}
+
+.professor__credential-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.professor__credential-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.professor__quote {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--secondary);
+  border-left: 4px solid var(--accent);
+  padding-left: 20px;
+  line-height: 1.7;
+}
+
+/* ===== MODULE BREAKDOWN / ACCORDION SECTION ===== */
 .modules {
   background: var(--bg-light-gray);
   padding: calc(var(--spacing) * 12) 0;
 }
 
-.modules-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: calc(var(--spacing) * 4);
-  margin-top: calc(var(--spacing) * 6);
+.accordion {
+  max-width: 860px;
+  margin: calc(var(--spacing) * 6) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing) * 2);
 }
 
-.module-card {
+.accordion__item {
   background: var(--primary);
-  padding: calc(var(--spacing) * 5);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform var(--transition), box-shadow var(--transition);
-  position: relative;
   overflow: hidden;
+  transition: box-shadow var(--transition);
 }
 
-.module-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--secondary);
-}
-
-.module-card:hover {
-  transform: translateY(-4px);
+.accordion__item:hover {
   box-shadow: var(--shadow-lg);
 }
 
-.module-card__number {
+.accordion__item.open {
+  box-shadow: var(--shadow-lg);
+}
+
+.accordion__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  transition: background var(--transition);
+}
+
+.accordion__header:hover {
+  background: rgba(16,64,40,0.02);
+}
+
+.accordion__header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.accordion__number {
   font-family: 'Montserrat', sans-serif;
-  font-size: 3rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  color: rgba(16,64,40,0.08);
-  line-height: 1;
-  margin-bottom: calc(var(--spacing) * 1);
+  color: var(--accent);
+  flex-shrink: 0;
+  width: 44px;
+  text-align: center;
 }
 
-.module-card__title {
-  font-size: 1.3rem;
+.accordion__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--secondary);
-  margin-bottom: calc(var(--spacing) * 1.5);
+  text-align: left;
 }
 
-.module-card__desc {
-  font-size: 0.95rem;
-  color: #666;
+.accordion__icon {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--secondary);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.accordion__item.open .accordion__icon {
+  transform: rotate(45deg);
+}
+
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 28px;
+}
+
+.accordion__item.open .accordion__body {
+  max-height: 600px;
+  padding: 0 28px 28px;
+}
+
+.accordion__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.accordion__list li {
+  position: relative;
+  padding: 10px 0 10px 28px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.accordion__list li:last-child {
+  border-bottom: none;
+}
+
+.accordion__list li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+/* ===== FOR WHO SECTION ===== */
+.for-who {
+  background: var(--primary);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.for-who__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--spacing) * 5);
+  margin-top: calc(var(--spacing) * 4);
+}
+
+.for-who__col {
+  padding: calc(var(--spacing) * 5);
+  border-radius: var(--radius);
+}
+
+.for-who__col--yes {
+  background: rgba(16,64,40,0.04);
+  border: 2px solid rgba(16,64,40,0.12);
+}
+
+.for-who__col--no {
+  background: rgba(198,40,40,0.03);
+  border: 2px solid rgba(198,40,40,0.1);
+}
+
+.for-who__col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: calc(var(--spacing) * 3);
 }
 
-.module-card__result {
-  background: rgba(16,64,40,0.05);
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: var(--secondary);
-  line-height: 1.5;
+.for-who__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.module-card__result-label {
-  font-weight: 700;
+.for-who__list li {
+  position: relative;
+  padding: 10px 0 10px 24px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.for-who__list li:last-child {
+  border-bottom: none;
+}
+
+.for-who__col--yes .for-who__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.for-who__col--no .for-who__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 8px;
+  height: 8px;
+  background: #c62828;
+  border-radius: 50%;
+}
+
+/* ===== TRANSFORMATION SECTION ===== */
+.transformation {
+  background: var(--secondary);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: calc(var(--spacing) * 4);
+  align-items: start;
+  margin-top: calc(var(--spacing) * 6);
+}
+
+.transform-col {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing) * 5);
+}
+
+.transform-col--before {
+  border-color: rgba(198,40,40,0.3);
+}
+
+.transform-col--after {
+  border-color: rgba(255,143,0,0.4);
+  background: rgba(255,255,255,0.1);
+}
+
+.transform-col__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: calc(var(--spacing) * 3);
+  text-align: center;
+}
+
+.transform-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transform-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.transform-list li:last-child {
+  border-bottom: none;
+}
+
+.transform-list li svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.transform-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--spacing) * 12);
+}
+
+.transform-arrow svg {
+  filter: drop-shadow(0 4px 12px rgba(255,143,0,0.4));
+}
+
+.transform-cta {
+  text-align: center;
+  margin-top: calc(var(--spacing) * 6);
+}
+
+/* ===== FACULTY SECTION ===== */
+.faculty {
+  background: var(--bg-light-gray);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.faculty-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(var(--spacing) * 3);
+  margin-top: calc(var(--spacing) * 6);
+}
+
+.faculty-gallery__item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.faculty-gallery__item:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.faculty-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq {
+  background: var(--primary);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.accordion--faq {
+  max-width: 860px;
+  margin-top: calc(var(--spacing) * 4);
+}
+
+.accordion--faq .accordion__header-left {
+  gap: 0;
+}
+
+.faq__answer {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.faq__answer strong {
+  color: var(--secondary);
+}
+
+/* ===== ENROLLMENT / FORM SECTION ===== */
+.enrollment {
+  background: var(--bg-light-gray);
+  padding: calc(var(--spacing) * 12) 0;
+}
+
+.enrollment__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--spacing) * 6);
+  align-items: start;
+}
+
+/* Left column: Deliverables */
+.enrollment__deliverables {
+  padding-right: calc(var(--spacing) * 4);
+}
+
+.deliverable-group {
+  margin-bottom: calc(var(--spacing) * 5);
+}
+
+.deliverable-group__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.deliverable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.deliverable-list li {
+  position: relative;
+  padding: 8px 0 8px 24px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.deliverable-list li:last-child {
+  border-bottom: none;
+}
+
+.deliverable-list li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 16px;
+  width: 7px;
+  height: 7px;
+  background: var(--secondary);
+  border-radius: 50%;
+}
+
+.deliverable-list--bonus li::before {
+  background: var(--accent);
+}
+
+.deliverable-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: calc(var(--spacing) * 2);
+}
+
+.deliverable-mec {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Right column: Form */
+.enrollment__form-wrapper {
+  position: sticky;
+  top: 32px;
+}
+
+.enrollment__form-card {
+  background: var(--primary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: calc(var(--spacing) * 5);
+  border: 2px solid rgba(16,64,40,0.1);
+}
+
+.enrollment__price-header {
+  text-align: center;
+  padding-bottom: calc(var(--spacing) * 4);
+  margin-bottom: calc(var(--spacing) * 4);
+  border-bottom: 2px solid var(--bg-light-gray);
+}
+
+.enrollment__price-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: calc(var(--spacing) * 1);
+}
+
+.enrollment__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+
+.enrollment__installments {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #777;
+}
+
+.enrollment__amount {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--secondary);
+  line-height: 1;
+}
+
+.enrollment__cents {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.enrollment__payment-method {
+  display: block;
+  font-size: 0.9rem;
+  color: #999;
+  margin-top: calc(var(--spacing) * 1);
+}
+
+.form-group {
+  margin-bottom: calc(var(--spacing) * 2.5);
+}
+
+.form-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: var(--bg-light-gray);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-input::placeholder {
+  color: #bbb;
+}
+
+.form-input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(16,64,40,0.1);
+}
+
+.enrollment__scholarship {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255,143,0,0.08);
+  border: 1px solid rgba(255,143,0,0.25);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: calc(var(--spacing) * 2.5);
+  text-align: center;
+}
+
+.enrollment__scholarship span {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.enrollment__scholarship strong {
   color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.enrollment__submit {
+  width: 100%;
+  font-size: 1rem;
+  padding: 18px 24px;
+}
+
+.enrollment__secure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: calc(var(--spacing) * 2);
 }
 
 /* ===== VALUE STACK SECTION ===== */
@@ -725,6 +1398,13 @@ h1, h2, h3 {
   font-size: 0.85rem;
 }
 
+.logo-anhanguera--footer {
+  height: 40px;
+  width: auto;
+  margin-bottom: calc(var(--spacing) * 2);
+  opacity: 0.5;
+}
+
 .footer__disclaimer {
   margin-top: calc(var(--spacing) * 2);
   font-size: 0.75rem;
@@ -744,9 +1424,8 @@ h1, h2, h3 {
     order: -1;
   }
 
-  .hero__image-placeholder {
-    max-width: 280px;
-    aspect-ratio: 1;
+  .hero__institutional {
+    justify-content: center;
   }
 
   .hero__cta {
@@ -758,12 +1437,36 @@ h1, h2, h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .modules-grid {
+  .guarantee-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .guarantee-grid {
+  .professor__grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: calc(var(--spacing) * 5);
+  }
+
+  .professor__photo-wrapper {
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .professor__quote {
+    text-align: left;
+  }
+
+  .why-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .faculty-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .enrollment__grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -782,11 +1485,32 @@ h1, h2, h3 {
   }
 
   .hero__headline {
-    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    font-size: clamp(1.4rem, 5vw, 2rem);
   }
 
   .hero__sub-headline {
     font-size: 1.05rem;
+  }
+
+  .hero__institutional {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-anhanguera--hero {
+    height: 40px;
+  }
+
+  .solution__credential {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .solution__credential-text {
+    font-size: 0.85rem;
   }
 
   .btn--lg {
@@ -846,8 +1570,25 @@ h1, h2, h3 {
     border-left: 4px solid var(--accent) !important;
   }
 
-  .modules-grid {
-    grid-template-columns: 1fr;
+  .accordion__header {
+    padding: 18px 20px;
+  }
+
+  .accordion__number {
+    font-size: 1.3rem;
+    width: 36px;
+  }
+
+  .accordion__title {
+    font-size: 1rem;
+  }
+
+  .accordion__body {
+    padding: 0 20px;
+  }
+
+  .accordion__item.open .accordion__body {
+    padding: 0 20px 20px;
   }
 
   .guarantee-grid {
@@ -887,6 +1628,56 @@ h1, h2, h3 {
     display: none;
   }
 
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .professor__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .professor__credential-item {
+    text-align: left;
+  }
+
+  .for-who__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transform-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .transform-divider {
+    padding: calc(var(--spacing) * 3) 0;
+  }
+
+  .transform-arrow svg {
+    transform: rotate(90deg);
+  }
+
+  .faculty-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: calc(var(--spacing) * 2);
+  }
+
+  .enrollment__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enrollment__deliverables {
+    padding-right: 0;
+  }
+
+  .enrollment__form-wrapper {
+    position: static;
+  }
+
+  .enrollment__amount {
+    font-size: 2.8rem;
+  }
+
   .market-truth,
   .salary-abyss,
   .solution,
@@ -894,7 +1685,14 @@ h1, h2, h3 {
   .value-stack,
   .guarantee,
   .testimonials,
-  .final-cta {
+  .final-cta,
+  .why-anesthesiology,
+  .professor,
+  .for-who,
+  .transformation,
+  .faculty,
+  .faq,
+  .enrollment {
     padding: calc(var(--spacing) * 8) 0;
   }
 }
@@ -902,15 +1700,113 @@ h1, h2, h3 {
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero__headline {
-    font-size: 1.75rem;
+    font-size: 1.3rem;
+  }
+
+  .hero__sub-headline {
+    font-size: 0.95rem;
+  }
+
+  .hero__badge {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+  }
+
+  .logo-anhanguera--hero {
+    height: 32px;
   }
 
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+  }
+
+  .section-body {
+    font-size: 0.95rem;
   }
 
   .stat-card__number {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .stat-card {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .why-card {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .why-card__title {
+    font-size: 1.05rem;
+  }
+
+  .why-card__text {
+    font-size: 0.9rem;
+  }
+
+  .professor__bio {
+    font-size: 0.95rem;
+  }
+
+  .professor__quote {
+    font-size: 1rem;
+  }
+
+  .for-who__col {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .for-who__col-title {
+    font-size: 1rem;
+  }
+
+  .for-who__list li {
+    font-size: 0.9rem;
+  }
+
+  .transform-col {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .transform-col__title {
+    font-size: 1rem;
+  }
+
+  .transform-list li {
+    font-size: 0.9rem;
+  }
+
+  .enrollment__amount {
+    font-size: 2.2rem;
+  }
+
+  .enrollment__cents {
+    font-size: 1.1rem;
+  }
+
+  .enrollment__form-card {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .enrollment__submit {
+    font-size: 0.9rem;
+    padding: 16px 20px;
+  }
+
+  .guarantee-card {
+    padding: calc(var(--spacing) * 4);
+  }
+
+  .guarantee-card__title {
+    font-size: 1.1rem;
+  }
+
+  .testimonial-card {
+    padding: calc(var(--spacing) * 3.5);
+  }
+
+  .faculty-gallery {
+    grid-template-columns: 1fr 1fr;
   }
 
   .module-card__number {

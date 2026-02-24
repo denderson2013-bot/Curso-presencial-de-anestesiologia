@@ -62,6 +62,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ===== ACCORDION (Disciplines) =====
+  document.querySelectorAll('.accordion__header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+
+      // Close all other items
+      document.querySelectorAll('.accordion__item').forEach(i => {
+        i.classList.remove('open');
+      });
+
+      // Toggle the clicked item
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+
   // ===== SMOOTH SCROLL for CTA buttons =====
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
@@ -88,4 +106,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
 
   statNumbers.forEach(el => counterObserver.observe(el));
+
+  // ===== PHONE MASK =====
+  const phoneInput = document.getElementById('phone');
+  if (phoneInput) {
+    phoneInput.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 11) value = value.slice(0, 11);
+      if (value.length > 6) {
+        value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+      } else if (value.length > 2) {
+        value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+      } else if (value.length > 0) {
+        value = `(${value}`;
+      }
+      e.target.value = value;
+    });
+  }
+
+  // ===== FORM SUBMISSION =====
+  const form = document.getElementById('enrollmentForm');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      if (name && email && phone) {
+        const btn = form.querySelector('.enrollment__submit');
+        btn.textContent = 'ENVIADO COM SUCESSO!';
+        btn.style.background = '#104028';
+        btn.classList.remove('pulse');
+        setTimeout(() => {
+          btn.textContent = 'QUERO CONCORRER A UMA BOLSA DE ESTUDOS';
+          btn.style.background = '';
+          btn.classList.add('pulse');
+        }, 3000);
+      }
+    });
+  }
 });
