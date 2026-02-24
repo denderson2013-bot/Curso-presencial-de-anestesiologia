@@ -1526,7 +1526,7 @@ h1, h2, h3 {
   }
 
   .hero__headline {
-    font-size: clamp(1.4rem, 5vw, 2rem);
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
   }
 
   .hero__sub-headline {
@@ -1574,7 +1574,7 @@ h1, h2, h3 {
 
   .hero__badge-line1 {
     display: block;
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--secondary);
     opacity: 0.7;
@@ -1582,11 +1582,11 @@ h1, h2, h3 {
 
   .hero__badge-line2 {
     display: block;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
     font-weight: 800;
     color: var(--text-light);
     background: var(--accent);
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 4px;
     letter-spacing: 0.5px;
     width: fit-content;
@@ -1790,7 +1790,7 @@ h1, h2, h3 {
 /* Small Mobile */
 @media (max-width: 480px) {
   .hero__headline {
-    font-size: 1.3rem;
+    font-size: clamp(1.8rem, 7vw, 2.6rem);
   }
 
   .hero__sub-headline {
@@ -1807,7 +1807,7 @@ h1, h2, h3 {
 
   .hero__badge {
     font-size: 0.7rem;
-    padding: 6px 14px;
+    padding: 0;
   }
 
   .logo-anhanguera--hero {
@@ -1815,11 +1815,11 @@ h1, h2, h3 {
   }
 
   .hero__badge-line1 {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
   }
 
   .hero__badge-line2 {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
   }
 
   .section-title {
